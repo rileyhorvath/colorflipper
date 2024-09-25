@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cOLORFLIpper</title>
+</head>
+
+<body>
+    <p id="random"></p>
+    <p>Hex Code</p>
+    <button id="generate">New Color</button>
+
+
+    <script>
+        let hex = "#";
+        const chars = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        let submit = document.getElementById("generate");
+        submit.addEventListener("click", function(e){
+            e.preventDefault();
+            hex = "#";
+            while(hex.length < 7){
+            let cheese = chars[Math.floor(Math.random() * 16)];
+            if(cheese == 10){
+                cheese = "A"
+            }
+            if(cheese == 11){
+                cheese = "B"
+            }
+            if(cheese == 12){
+                cheese = "C"
+            }
+            if(cheese == 13){
+                cheese = "D"
+            }
+            if(cheese == 14){
+                cheese = "E"
+            }
+            if(cheese == 15){
+                cheese = "F"
+            }
+            hex += cheese.toString();
+            document.body.style.background = hex;
+            console.log(hex)
+            random.innerText = hex;}
+        })
+        
+
+
+
+    </script>
+</body>
+</html>
